@@ -4,6 +4,9 @@
  */
 package Lab6P2_CarmenCastillo;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author casti
@@ -16,6 +19,8 @@ public class MainLab extends javax.swing.JFrame {
     public MainLab() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,22 +31,388 @@ public class MainLab extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        vCrearCuenta = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        userLabel6 = new javax.swing.JLabel();
+        txtf_ContraCC = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        userLabel7 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        btn_CrearCuenta1 = new javax.swing.JButton();
+        userLabel8 = new javax.swing.JLabel();
+        txtf_NombreCC = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        userLabel9 = new javax.swing.JLabel();
+        txtf_CorreoCC = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        userLabel10 = new javax.swing.JLabel();
+        txtf_PaisRCC = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        userLabel11 = new javax.swing.JLabel();
+        jDC_FechaNaCC = new com.toedter.calendar.JDateChooser();
+        txtf_UsuarioCC1 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        userLabel3 = new javax.swing.JLabel();
+        txtf_UsuarioIS = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        userLabel4 = new javax.swing.JLabel();
+        txtf_ContraIS = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        btn_IS = new javax.swing.JButton();
+        userLabel5 = new javax.swing.JLabel();
+        btn_CrearCuenta = new javax.swing.JButton();
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("CREAR CUENTA");
+
+        userLabel6.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel6.setText("USUARIO");
+
+        txtf_ContraCC.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_ContraCC.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_ContraCC.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_ContraCC.setBorder(null);
+        txtf_ContraCC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtf_ContraCCActionPerformed(evt);
+            }
+        });
+
+        userLabel7.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel7.setText("CONTRASEÑA");
+
+        btn_CrearCuenta1.setBackground(new java.awt.Color(0, 0, 0));
+        btn_CrearCuenta1.setText("CREAR CUENTA");
+        btn_CrearCuenta1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_CrearCuenta1MouseClicked(evt);
+            }
+        });
+
+        userLabel8.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel8.setText("NOMBRE");
+
+        txtf_NombreCC.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_NombreCC.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_NombreCC.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_NombreCC.setBorder(null);
+        txtf_NombreCC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtf_NombreCCActionPerformed(evt);
+            }
+        });
+
+        userLabel9.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel9.setText("CORREO");
+
+        txtf_CorreoCC.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_CorreoCC.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_CorreoCC.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_CorreoCC.setBorder(null);
+
+        userLabel10.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel10.setText("PAIS DE RESIDENCIA");
+
+        txtf_PaisRCC.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_PaisRCC.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_PaisRCC.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_PaisRCC.setBorder(null);
+
+        userLabel11.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel11.setText("FECHA DE NACIMIENTO");
+
+        txtf_UsuarioCC1.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_UsuarioCC1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_UsuarioCC1.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_UsuarioCC1.setBorder(null);
+        txtf_UsuarioCC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtf_UsuarioCC1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(44, 44, 44))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(userLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator6)
+                            .addComponent(txtf_CorreoCC, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(userLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtf_NombreCC, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(userLabel11)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jDC_FechaNaCC, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                    .addComponent(userLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtf_PaisRCC, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_CrearCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(userLabel7)
+                                .addGap(0, 287, Short.MAX_VALUE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator4)
+                            .addComponent(userLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtf_ContraCC, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(25, 25, 25))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(525, 525, 525)
+                    .addComponent(txtf_UsuarioCC1)
+                    .addGap(15, 15, 15)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(userLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtf_NombreCC, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(userLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtf_CorreoCC, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(userLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtf_PaisRCC, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(userLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(jDC_FechaNaCC, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(userLabel6)
+                        .addGap(48, 48, 48)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(userLabel7)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtf_ContraCC, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
+                        .addGap(183, 183, 183)
+                        .addComponent(btn_CrearCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(131, 131, 131)
+                    .addComponent(txtf_UsuarioCC1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(361, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout vCrearCuentaLayout = new javax.swing.GroupLayout(vCrearCuenta.getContentPane());
+        vCrearCuenta.getContentPane().setLayout(vCrearCuentaLayout);
+        vCrearCuentaLayout.setHorizontalGroup(
+            vCrearCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        vCrearCuentaLayout.setVerticalGroup(
+            vCrearCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("INICIO DE SESIÓN");
+
+        userLabel3.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel3.setText("USUARIO");
+
+        txtf_UsuarioIS.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_UsuarioIS.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_UsuarioIS.setBorder(null);
+        txtf_UsuarioIS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtf_UsuarioISActionPerformed(evt);
+            }
+        });
+
+        userLabel4.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel4.setText("Contraseña");
+
+        txtf_ContraIS.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_ContraIS.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_ContraIS.setBorder(null);
+
+        btn_IS.setBackground(new java.awt.Color(0, 0, 0));
+        btn_IS.setText("INGRESAR");
+
+        userLabel5.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel5.setText("O");
+
+        btn_CrearCuenta.setBackground(new java.awt.Color(0, 0, 0));
+        btn_CrearCuenta.setText("CREAR CUENTA");
+        btn_CrearCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_CrearCuentaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(userLabel4)
+                                .addComponent(txtf_ContraIS)
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(userLabel3)
+                                .addComponent(txtf_UsuarioIS)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(449, 449, 449)
+                        .addComponent(userLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(391, 391, 391)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_IS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_CrearCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))))
+                .addContainerGap(122, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(userLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtf_UsuarioIS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
+                .addComponent(userLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtf_ContraIS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_IS, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(userLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(btn_CrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtf_UsuarioISActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_UsuarioISActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtf_UsuarioISActionPerformed
+
+    private void txtf_ContraCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_ContraCCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtf_ContraCCActionPerformed
+
+    private void txtf_NombreCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_NombreCCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtf_NombreCCActionPerformed
+
+    private void txtf_UsuarioCC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_UsuarioCC1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtf_UsuarioCC1ActionPerformed
+
+    private void btn_CrearCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearCuentaMouseClicked
+        
+        vCrearCuenta.pack();
+        vCrearCuenta.setLocationRelativeTo(null);
+        vCrearCuenta.setVisible(true);
+        
+    }//GEN-LAST:event_btn_CrearCuentaMouseClicked
+
+    private void btn_CrearCuenta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearCuenta1MouseClicked
+        
+        
+        
+    }//GEN-LAST:event_btn_CrearCuenta1MouseClicked
+
+    public static boolean validarCorreo(String correos) {
+
+        String regex = "^[a-zA-Z0-9._%&$+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        Pattern patron = Pattern.compile(regex);
+        Matcher matcher = patron.matcher(correos);
+
+        return matcher.matches();
+    }
+
+    public static boolean validarContrasena(String contrasena) {
+
+        String regex = "^[a-zA-Z0-9-_&$%@]*$";
+        Pattern patron = Pattern.compile(regex);
+        Matcher matcher = patron.matcher(contrasena);
+
+        return matcher.matches();
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -78,5 +449,37 @@ public class MainLab extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_CrearCuenta;
+    private javax.swing.JButton btn_CrearCuenta1;
+    private javax.swing.JButton btn_IS;
+    private com.toedter.calendar.JDateChooser jDC_FechaNaCC;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JTextField txtf_ContraCC;
+    private javax.swing.JTextField txtf_ContraIS;
+    private javax.swing.JTextField txtf_CorreoCC;
+    private javax.swing.JTextField txtf_NombreCC;
+    private javax.swing.JTextField txtf_PaisRCC;
+    private javax.swing.JTextField txtf_UsuarioCC1;
+    private javax.swing.JTextField txtf_UsuarioIS;
+    private javax.swing.JLabel userLabel10;
+    private javax.swing.JLabel userLabel11;
+    private javax.swing.JLabel userLabel3;
+    private javax.swing.JLabel userLabel4;
+    private javax.swing.JLabel userLabel5;
+    private javax.swing.JLabel userLabel6;
+    private javax.swing.JLabel userLabel7;
+    private javax.swing.JLabel userLabel8;
+    private javax.swing.JLabel userLabel9;
+    private javax.swing.JDialog vCrearCuenta;
     // End of variables declaration//GEN-END:variables
 }
