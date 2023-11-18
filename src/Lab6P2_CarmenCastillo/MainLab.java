@@ -24,6 +24,7 @@ public class MainLab extends javax.swing.JFrame {
 
     static ArrayList<Jugadores> jugadores = new ArrayList();
     static ArrayList<Carro> carrosSueltos = new ArrayList();
+    static ArrayList<Concesionarias> palabraconC = new ArrayList();
 
     /**
      * Creates new form MainLab
@@ -108,44 +109,34 @@ public class MainLab extends javax.swing.JFrame {
         vAdministrador = new javax.swing.JDialog();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
-        title4 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtA_ListJugadores1 = new javax.swing.JTextArea();
-        btn_Regresarmod3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        btn_RegresarCC1 = new javax.swing.JButton();
+        userLabel33 = new javax.swing.JLabel();
+        txtf_nombreCon = new javax.swing.JTextField();
+        jSeparator22 = new javax.swing.JSeparator();
+        cb_localCon = new javax.swing.JComboBox<>();
+        userLabel34 = new javax.swing.JLabel();
+        btn_CrearCon = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         btn_Regresarmod4 = new javax.swing.JButton();
         title5 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tb_lista1 = new javax.swing.JTable();
+        userLabel35 = new javax.swing.JLabel();
+        jDC_FechaNaCC1 = new com.toedter.calendar.JDateChooser();
+        userLabel36 = new javax.swing.JLabel();
+        jSeparator23 = new javax.swing.JSeparator();
+        jSeparator24 = new javax.swing.JSeparator();
+        cb_paisCarro = new javax.swing.JComboBox<>();
+        userLabel37 = new javax.swing.JLabel();
+        cb_marcaCarro = new javax.swing.JComboBox<>();
+        jSeparator25 = new javax.swing.JSeparator();
+        userLabel38 = new javax.swing.JLabel();
+        cb_modeloCarro = new javax.swing.JComboBox<>();
+        jSeparator26 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
-        title6 = new javax.swing.JLabel();
-        userLabel23 = new javax.swing.JLabel();
-        userLabel24 = new javax.swing.JLabel();
-        cb_modJugadores1 = new javax.swing.JComboBox<>();
-        jSeparator15 = new javax.swing.JSeparator();
-        userLabel25 = new javax.swing.JLabel();
-        userLabel26 = new javax.swing.JLabel();
-        txtf_modNombre1 = new javax.swing.JTextField();
-        userLabel27 = new javax.swing.JLabel();
-        txtf_modCorreo1 = new javax.swing.JTextField();
-        jSeparator16 = new javax.swing.JSeparator();
-        jSeparator17 = new javax.swing.JSeparator();
-        userLabel28 = new javax.swing.JLabel();
-        txtf_modPais1 = new javax.swing.JTextField();
-        jSeparator18 = new javax.swing.JSeparator();
-        userLabel29 = new javax.swing.JLabel();
-        jDC_modFecha1 = new com.toedter.calendar.JDateChooser();
-        userLabel30 = new javax.swing.JLabel();
-        txtf_modUsuario1 = new javax.swing.JTextField();
-        jSeparator19 = new javax.swing.JSeparator();
-        userLabel31 = new javax.swing.JLabel();
-        txtf_modContra1 = new javax.swing.JTextField();
-        jSeparator20 = new javax.swing.JSeparator();
         btn_Regresarmod5 = new javax.swing.JButton();
-        btn_GuardarMod1 = new javax.swing.JButton();
-        userLabel32 = new javax.swing.JLabel();
-        txtf_modCuenta1 = new javax.swing.JTextField();
-        jSeparator21 = new javax.swing.JSeparator();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tb_lista1 = new javax.swing.JTable();
+        title4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         userLabel3 = new javax.swing.JLabel();
@@ -709,21 +700,49 @@ public class MainLab extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
 
-        title4.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        title4.setForeground(new java.awt.Color(0, 0, 0));
-        title4.setText("LISTAR USUARIOS");
+        jLabel4.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("CREAR CONCESIONARIA");
 
-        txtA_ListJugadores1.setColumns(20);
-        txtA_ListJugadores1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        txtA_ListJugadores1.setRows(5);
-        jScrollPane3.setViewportView(txtA_ListJugadores1);
-
-        btn_Regresarmod3.setBackground(new java.awt.Color(0, 0, 0));
-        btn_Regresarmod3.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Regresarmod3.setText("<");
-        btn_Regresarmod3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_RegresarCC1.setBackground(new java.awt.Color(0, 0, 0));
+        btn_RegresarCC1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_RegresarCC1.setText("<");
+        btn_RegresarCC1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_Regresarmod3MouseClicked(evt);
+                btn_RegresarCC1MouseClicked(evt);
+            }
+        });
+
+        userLabel33.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel33.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel33.setText("NOMBRE");
+
+        txtf_nombreCon.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_nombreCon.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_nombreCon.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_nombreCon.setBorder(null);
+
+        cb_localCon.setBackground(new java.awt.Color(153, 153, 153));
+        cb_localCon.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cb_localCon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Japón", "Italia ", "USA", "Alemania", "Francia", "UK", "Suecia" }));
+        cb_localCon.setBorder(null);
+        cb_localCon.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_localConItemStateChanged(evt);
+            }
+        });
+
+        userLabel34.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel34.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel34.setText("LOCACIÓN");
+
+        btn_CrearCon.setBackground(new java.awt.Color(0, 0, 0));
+        btn_CrearCon.setForeground(new java.awt.Color(255, 255, 255));
+        btn_CrearCon.setText("Crear Concesionaria");
+        btn_CrearCon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_CrearConMouseClicked(evt);
             }
         });
 
@@ -731,31 +750,50 @@ public class MainLab extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(btn_RegresarCC1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(128, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(btn_Regresarmod3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(title4)
-                        .addGap(23, 23, 23))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(58, Short.MAX_VALUE))))
+                    .addComponent(userLabel34)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btn_CrearCon, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cb_localCon, 0, 708, Short.MAX_VALUE)
+                            .addComponent(userLabel33, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtf_nombreCon, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator22))
+                        .addComponent(jLabel4)))
+                .addGap(83, 83, 83))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(title4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Regresarmod3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(btn_RegresarCC1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addComponent(userLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtf_nombreCon, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(userLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cb_localCon, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(btn_CrearCon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
 
-        jTabbedPane2.addTab("Listar Jugadores", jPanel7);
+        jTabbedPane2.addTab("Crear Consecionaria", jPanel7);
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -770,17 +808,61 @@ public class MainLab extends javax.swing.JFrame {
 
         title5.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         title5.setForeground(new java.awt.Color(0, 0, 0));
-        title5.setText("ELIMINAR USUARIOS");
+        title5.setText("AGREGAR CARRO");
 
-        tb_lista1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        userLabel35.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel35.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel35.setText("FECHA DE FABRICACION");
 
-            },
-            new String [] {
-                "Usuario", "Nombre", "Correo", "Cuenta de Banco"
+        userLabel36.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel36.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel36.setText("PAIS");
+
+        cb_paisCarro.setBackground(new java.awt.Color(153, 153, 153));
+        cb_paisCarro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cb_paisCarro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Japón", "Italia", "USA", "Alemania", "Francia", "UK", "Suecia" }));
+        cb_paisCarro.setBorder(null);
+        cb_paisCarro.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_paisCarroItemStateChanged(evt);
             }
-        ));
-        jScrollPane4.setViewportView(tb_lista1);
+        });
+        cb_paisCarro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_paisCarroActionPerformed(evt);
+            }
+        });
+
+        userLabel37.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel37.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel37.setText("MARCA");
+
+        cb_marcaCarro.setBackground(new java.awt.Color(153, 153, 153));
+        cb_marcaCarro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cb_marcaCarro.setBorder(null);
+        cb_marcaCarro.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_marcaCarroItemStateChanged(evt);
+            }
+        });
+        cb_marcaCarro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_marcaCarroActionPerformed(evt);
+            }
+        });
+
+        userLabel38.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel38.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel38.setText("MODELO");
+
+        cb_modeloCarro.setBackground(new java.awt.Color(153, 153, 153));
+        cb_modeloCarro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cb_modeloCarro.setBorder(null);
+        cb_modeloCarro.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_modeloCarroItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -788,14 +870,34 @@ public class MainLab extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(btn_Regresarmod4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(title5)
-                .addGap(37, 37, 37))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(btn_Regresarmod4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 594, Short.MAX_VALUE)
+                        .addComponent(title5)
+                        .addGap(37, 37, 37))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(userLabel35, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jDC_FechaNaCC1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(userLabel37, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jSeparator25, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cb_marcaCarro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(userLabel38)
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jSeparator26, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cb_modeloCarro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(userLabel36)
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jSeparator23, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cb_paisCarro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -804,90 +906,36 @@ public class MainLab extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(title5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_Regresarmod4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(userLabel35)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDC_FechaNaCC1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(userLabel36)
+                .addGap(4, 4, 4)
+                .addComponent(cb_paisCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(userLabel37)
+                .addGap(4, 4, 4)
+                .addComponent(cb_marcaCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(userLabel38)
+                .addGap(4, 4, 4)
+                .addComponent(cb_modeloCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70))
         );
 
-        jTabbedPane2.addTab("Eliminar Jugadores", jPanel8);
+        jTabbedPane2.addTab("Agregar Carro", jPanel8);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-
-        title6.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        title6.setForeground(new java.awt.Color(0, 0, 0));
-        title6.setText("MODIFICAR JUGADOR");
-
-        userLabel23.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        userLabel23.setForeground(new java.awt.Color(102, 102, 102));
-        userLabel23.setText("Seleccione el jugador a modificar. ");
-
-        userLabel24.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        userLabel24.setForeground(new java.awt.Color(0, 0, 0));
-        userLabel24.setText("JUGADOR");
-
-        cb_modJugadores1.setBackground(new java.awt.Color(153, 153, 153));
-        cb_modJugadores1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cb_modJugadores1.setBorder(null);
-        cb_modJugadores1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cb_modJugadores1ItemStateChanged(evt);
-            }
-        });
-
-        jSeparator15.setForeground(new java.awt.Color(0, 0, 0));
-
-        userLabel25.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        userLabel25.setForeground(new java.awt.Color(102, 102, 102));
-        userLabel25.setText("Ingrese las modificaciones de su jugador.");
-
-        userLabel26.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        userLabel26.setForeground(new java.awt.Color(51, 51, 51));
-        userLabel26.setText("NOMBRE");
-
-        txtf_modNombre1.setBackground(new java.awt.Color(204, 204, 204));
-        txtf_modNombre1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtf_modNombre1.setForeground(new java.awt.Color(102, 102, 102));
-        txtf_modNombre1.setBorder(null);
-
-        userLabel27.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        userLabel27.setForeground(new java.awt.Color(51, 51, 51));
-        userLabel27.setText("CORREO");
-
-        txtf_modCorreo1.setBackground(new java.awt.Color(204, 204, 204));
-        txtf_modCorreo1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtf_modCorreo1.setForeground(new java.awt.Color(102, 102, 102));
-        txtf_modCorreo1.setBorder(null);
-
-        userLabel28.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        userLabel28.setForeground(new java.awt.Color(51, 51, 51));
-        userLabel28.setText("PAIS DE RESIDENCIA");
-
-        txtf_modPais1.setBackground(new java.awt.Color(204, 204, 204));
-        txtf_modPais1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtf_modPais1.setForeground(new java.awt.Color(102, 102, 102));
-        txtf_modPais1.setBorder(null);
-
-        userLabel29.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        userLabel29.setForeground(new java.awt.Color(51, 51, 51));
-        userLabel29.setText("FECHA DE NACIMIENTO");
-
-        userLabel30.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        userLabel30.setForeground(new java.awt.Color(51, 51, 51));
-        userLabel30.setText("USUARIO");
-
-        txtf_modUsuario1.setBackground(new java.awt.Color(204, 204, 204));
-        txtf_modUsuario1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtf_modUsuario1.setForeground(new java.awt.Color(102, 102, 102));
-        txtf_modUsuario1.setBorder(null);
-
-        userLabel31.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        userLabel31.setForeground(new java.awt.Color(51, 51, 51));
-        userLabel31.setText("CONTRASEÑA");
-
-        txtf_modContra1.setBackground(new java.awt.Color(204, 204, 204));
-        txtf_modContra1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtf_modContra1.setForeground(new java.awt.Color(102, 102, 102));
-        txtf_modContra1.setBorder(null);
 
         btn_Regresarmod5.setBackground(new java.awt.Color(0, 0, 0));
         btn_Regresarmod5.setForeground(new java.awt.Color(255, 255, 255));
@@ -898,145 +946,47 @@ public class MainLab extends javax.swing.JFrame {
             }
         });
 
-        btn_GuardarMod1.setBackground(new java.awt.Color(0, 0, 0));
-        btn_GuardarMod1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_GuardarMod1.setText("GUARDAR CAMBIOS");
-        btn_GuardarMod1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_GuardarMod1MouseClicked(evt);
+        tb_lista1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Nombre", "Correo", "Cuenta de Banco"
             }
-        });
+        ));
+        jScrollPane3.setViewportView(tb_lista1);
 
-        userLabel32.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        userLabel32.setForeground(new java.awt.Color(51, 51, 51));
-        userLabel32.setText("CUENTA BANCARIA");
-
-        txtf_modCuenta1.setBackground(new java.awt.Color(204, 204, 204));
-        txtf_modCuenta1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtf_modCuenta1.setForeground(new java.awt.Color(102, 102, 102));
-        txtf_modCuenta1.setBorder(null);
+        title4.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title4.setForeground(new java.awt.Color(0, 0, 0));
+        title4.setText("LISTAR CARROS");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(userLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(userLabel24)
-                        .addComponent(title6)
-                        .addComponent(cb_modJugadores1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator15)
-                        .addComponent(jSeparator17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                        .addComponent(jSeparator16)
-                        .addComponent(txtf_modNombre1)
-                        .addComponent(txtf_modCorreo1)
-                        .addComponent(userLabel27)
-                        .addComponent(userLabel26)
-                        .addComponent(userLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jSeparator21, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtf_modCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(userLabel32)))
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(btn_Regresarmod5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
+                .addGap(92, 92, 92)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(userLabel29)
-                                .addComponent(jDC_modFecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(userLabel28)
-                                .addComponent(txtf_modPais1)
-                                .addComponent(jSeparator18, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                                .addComponent(jSeparator19)
-                                .addComponent(txtf_modUsuario1)
-                                .addComponent(userLabel30)
-                                .addComponent(userLabel31)
-                                .addComponent(txtf_modContra1)
-                                .addComponent(jSeparator20))
-                            .addComponent(btn_GuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56))))
+                        .addComponent(btn_Regresarmod5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(title4))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addGap(46, 46, 46)
-                                                .addComponent(userLabel28))
-                                            .addComponent(btn_Regresarmod5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtf_modPais1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(userLabel29)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jDC_modFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(title6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(userLabel23)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(userLabel24)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cb_modJugadores1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(userLabel25)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(userLabel26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtf_modNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(userLabel27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtf_modCorreo1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(userLabel30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtf_modUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(userLabel31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtf_modContra1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(userLabel32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtf_modCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
-                .addComponent(btn_GuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Regresarmod5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(title4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Modificar Jugador", jPanel4);
+        jTabbedPane2.addTab("Listar Carros", jPanel4);
 
         javax.swing.GroupLayout vAdministradorLayout = new javax.swing.GroupLayout(vAdministrador.getContentPane());
         vAdministrador.getContentPane().setLayout(vAdministradorLayout);
@@ -1252,7 +1202,7 @@ public class MainLab extends javax.swing.JFrame {
         pais = txtf_PaisRCC.getText();
         corre = txtf_CorreoCC.getText();
         fechaN = jDC_FechaNaCC.getDate();
-        
+
         int anio = fechaN.getYear() + 1900;
 
         for (int i = 0; i < jugadores.size(); i++) {
@@ -1266,11 +1216,11 @@ public class MainLab extends javax.swing.JFrame {
         //validar edad
 //        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Paris"));
 //        cal.setTime(fechaN);
-        System.out.println(anio);
+        //System.out.println(anio);
         if (anio > 2011) {
             edadValid = false;
             JOptionPane.showMessageDialog(null, "Edad invalida 1.");
-        } else if (anio == 2011){
+        } else if (anio == 2011) {
             if (fechaN.getMonth() > 11) { //fecha de hoy 17 Nov
                 edadValid = false;
                 JOptionPane.showMessageDialog(null, "Edad invalida 2.");
@@ -1280,15 +1230,13 @@ public class MainLab extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Edad invalida 3.");
 
                 } else if (fechaN.getDate() < 17) {
-                    
+
                 }
             } else if (fechaN.getMonth() < 11) {
-                
-                
+
             }
         } else if (anio < 2011) {
-            
-            
+
         }
 
         //validar contra
@@ -1350,6 +1298,8 @@ public class MainLab extends javax.swing.JFrame {
         fechaN = jDC_modFecha.getDate();
         cuenta = Double.parseDouble(txtf_modCuenta.getText());
 
+        int anio = fechaN.getYear() + 1900;
+
         for (int i = 0; i < jugadores.size(); i++) {
 
             if (txtf_modUsuario.getText().equals(jugadores.get(i).getUser())) {
@@ -1370,23 +1320,27 @@ public class MainLab extends javax.swing.JFrame {
         //validar edad
 //        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Paris"));
 //        cal.setTime(fechaN);
-        System.out.println(fechaN.getYear());
-        if (fechaN.getYear() > 2011) {
+        //System.out.println(fechaN.getYear());
+        if (anio > 2011) {
             edadValid = false;
             JOptionPane.showMessageDialog(null, "Edad invalida 1.");
-        } else {
-            if (fechaN.getMonth() < 11) { //fecha de hoy 17 Nov
+        } else if (anio == 2011) {
+            if (fechaN.getMonth() > 11) { //fecha de hoy 17 Nov
                 edadValid = false;
                 JOptionPane.showMessageDialog(null, "Edad invalida 2.");
-            } else {
-                if (fechaN.getDate() < 17) {
+            } else if (fechaN.getMonth() == 11) {
+                if (fechaN.getDate() > 17) {
                     edadValid = false;
                     JOptionPane.showMessageDialog(null, "Edad invalida 3.");
 
-                } else {
-                    //ya esta en true
+                } else if (fechaN.getDate() < 17) {
+
                 }
+            } else if (fechaN.getMonth() < 11) {
+
             }
+        } else if (anio < 2011) {
+
         }
 
         //validar contra
@@ -1404,7 +1358,7 @@ public class MainLab extends javax.swing.JFrame {
             jugadores.get(cb_modJugadores.getSelectedIndex()).setPaisR(pais);
             jugadores.get(cb_modJugadores.getSelectedIndex()).setUser(usuario);
             JOptionPane.showMessageDialog(null, "Usuario modificado exitosamente.");
-            
+
             txtf_modNombre.setText("");
             txtf_modContra.setText("");
             txtf_modCorreo.setText("");
@@ -1429,29 +1383,29 @@ public class MainLab extends javax.swing.JFrame {
         txtA_ListJugadores.setText("");
         String x = "";
         for (Jugadores j : jugadores) {
-                x += "Usuario: " + j.getUser() + " | ";
-                x += "Nombre: " + j.getNombre()+ "\n";
+            x += "Usuario: " + j.getUser() + " | ";
+            x += "Nombre: " + j.getNombre() + "\n";
         }
         txtA_ListJugadores.setText(x);
 
     }
-    
+
     private void btn_ISAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ISAdminMouseClicked
-        
-        if (txtf_UsuarioIS.getText().equals("lib123") && txtf_ContraIS.getText().equals("321lib")) {
+
+        if (txtf_UsuarioIS.getText().equals("ADMIN") && txtf_ContraIS.getText().equals("ADMIN")) {
 
             this.setVisible(false);
-//            jdPantallaAdmin.pack();
-//            jdPantallaAdmin.setLocationRelativeTo(null);
-//            jdPantallaAdmin.setVisible(true);
-            //llenarcbTipoList();
+            vAdministrador.pack();
+            vAdministrador.setLocationRelativeTo(null);
+            vAdministrador.setVisible(true);
 
+            //llenarcbTipoList();
         } else {
 
-            JOptionPane.showMessageDialog(this, "Usuario y/o contraseña equivocados.");
+            JOptionPane.showMessageDialog(this, "Usuario y/o contraseña equivocados / Su usuario no es Administrador.");
 
         }
-        
+
     }//GEN-LAST:event_btn_ISAdminMouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
@@ -1473,29 +1427,64 @@ public class MainLab extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_btn_Regresarmod2MouseClicked
 
-    private void btn_Regresarmod3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_Regresarmod3MouseClicked
-
     private void btn_Regresarmod4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod4MouseClicked
-        // TODO add your handling code here:
+        vModificarJugador.pack();
+        vModificarJugador.setLocationRelativeTo(null);
+        vModificarJugador.setVisible(false);
+        this.setVisible(true);
     }//GEN-LAST:event_btn_Regresarmod4MouseClicked
-
-    private void cb_modJugadores1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_modJugadores1ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_modJugadores1ItemStateChanged
-
-    private void btn_Regresarmod5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_Regresarmod5MouseClicked
-
-    private void btn_GuardarMod1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_GuardarMod1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_GuardarMod1MouseClicked
 
     private void jTabbedPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane2MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPane2MouseClicked
+
+    private void btn_RegresarCC1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegresarCC1MouseClicked
+        vAdministrador.pack();
+        vAdministrador.setLocationRelativeTo(null);
+        vAdministrador.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_btn_RegresarCC1MouseClicked
+
+    private void cb_localConItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_localConItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_localConItemStateChanged
+
+    private void btn_CrearConMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearConMouseClicked
+
+        String nombr = txtf_nombreCon.getText();
+        Object pais = cb_localCon.getSelectedItem();
+
+        Concesionarias nuevaCon = new Concesionarias(nombr, (String) pais);
+        palabraconC.add(nuevaCon);
+
+    }//GEN-LAST:event_btn_CrearConMouseClicked
+
+    private void btn_Regresarmod5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod5MouseClicked
+        vAdministrador.pack();
+        vAdministrador.setLocationRelativeTo(null);
+        vAdministrador.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_btn_Regresarmod5MouseClicked
+
+    private void cb_paisCarroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_paisCarroItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_paisCarroItemStateChanged
+
+    private void cb_marcaCarroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_marcaCarroItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_marcaCarroItemStateChanged
+
+    private void cb_modeloCarroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_modeloCarroItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_modeloCarroItemStateChanged
+
+    private void cb_paisCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_paisCarroActionPerformed
+        llenarcombi1();
+    }//GEN-LAST:event_cb_paisCarroActionPerformed
+
+    private void cb_marcaCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_marcaCarroActionPerformed
+        llenarcombi2();
+    }//GEN-LAST:event_cb_marcaCarroActionPerformed
 
     private void llenarcomboModCarro() {
         cb_modJugadores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
@@ -1506,7 +1495,118 @@ public class MainLab extends javax.swing.JFrame {
             cb_modJugadores.setModel(modelo);
         }
     }
+
+    private void llenarcombi1() {
+        cb_marcaCarro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
+
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_marcaCarro.getModel();
+        if (cb_paisCarro.getSelectedItem().equals("Japón")) {
+            modelo.addElement("Subaru");
+            modelo.addElement("Toyota");
+            modelo.addElement("Honda");
+            modelo.addElement("Mitsubishi");
+            modelo.addElement("Nissan");
+        } else if (cb_paisCarro.getSelectedItem().equals("Italia")) {
+            modelo.addElement("Ferrari");
+            modelo.addElement("Lamborghini");
+        } else if (cb_paisCarro.getSelectedItem().equals("USA")) {
+            modelo.addElement("Ford");
+            modelo.addElement("Chevrolet");
+            modelo.addElement("ACORA");
+        } else if (cb_paisCarro.getSelectedItem().equals("Alemania")) {
+            modelo.addElement("BMW");
+            modelo.addElement("Mercedes-Benz");
+            modelo.addElement("XW");
+            modelo.addElement("Audi");
+            modelo.addElement("Porche");
+        } else if (cb_paisCarro.getSelectedItem().equals("Francia")) {
+            modelo.addElement("Reugeot");
+        } else if (cb_paisCarro.getSelectedItem().equals("UK")) {
+            modelo.addElement("Mini");
+        } else if (cb_paisCarro.getSelectedItem().equals("Suecia")) {
+            modelo.addElement("Volvo");
+        }
+
+        cb_marcaCarro.setModel(modelo);
+
+    }
     
+    private void llenarcombi2() {
+        cb_modeloCarro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
+
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_modeloCarro.getModel();
+        if (cb_marcaCarro.getSelectedItem().equals("Subaru")) {
+            modelo.addElement("WR-X");
+            modelo.addElement("Imprez");
+            modelo.addElement("BRZ");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Toyota")) {
+            modelo.addElement("GT-86");
+            modelo.addElement("Supra");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Honda")) {
+            modelo.addElement("Civic Type-R");
+            modelo.addElement("Integra Type-R");
+            modelo.addElement("CR-X");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Mitsubishi")) {
+            modelo.addElement("Lancer Exo");
+            modelo.addElement("Mirage");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Nissan")) {
+            modelo.addElement("Skyline-GTR(R32-R34)");
+            modelo.addElement("GTR-R35");
+            modelo.addElement("2405X");
+            modelo.addElement("350Z");
+            modelo.addElement("370Z");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Ferrari")) {
+            modelo.addElement("LaFerrari");
+            modelo.addElement("Testorroso");
+            modelo.addElement("240");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Lamborghini")) {
+            modelo.addElement("Diablo");
+            modelo.addElement("Huracán");
+            modelo.addElement("Murcielago");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Ford")) {
+            modelo.addElement("Mustang");
+            modelo.addElement("F-150");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Chevrolet")) {
+            modelo.addElement("Camaro");
+            modelo.addElement("Corvette");
+            modelo.addElement("Bel-Air");
+        } else if (cb_marcaCarro.getSelectedItem().equals("ACORA")) {
+            modelo.addElement("NSX");
+        } else if (cb_marcaCarro.getSelectedItem().equals("BMW")) {
+            modelo.addElement("M3");
+            modelo.addElement("X6");
+            modelo.addElement("M5");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Mercedes-Benz")) {
+            modelo.addElement("A Class");
+            modelo.addElement("SLS AMG");
+            modelo.addElement("Mercedes-Benz E-Class");
+            modelo.addElement("Mercedes-Benz G-Class");
+        } else if (cb_marcaCarro.getSelectedItem().equals("XW")) {
+            modelo.addElement("Beetle");
+            modelo.addElement("Nardo Concept");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Audi")) {
+            modelo.addElement("R8");
+            modelo.addElement("TT-Coupe");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Porche")) {
+            modelo.addElement("All Carrera");
+            modelo.addElement("978");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Reugeot")) {
+            modelo.addElement("206");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Mini")) {
+            modelo.addElement("Cooper");
+            modelo.addElement("CountryMan");
+        } else if (cb_marcaCarro.getSelectedItem().equals("Volvo")) {
+            modelo.addElement("S90");
+            modelo.addElement("C30");
+            modelo.addElement("V90");
+            modelo.addElement("XC40");
+            modelo.addElement("S40");
+        }
+
+        cb_modeloCarro.setModel(modelo);
+
+    }
+
     private void listarTabla() {
         try {
 
@@ -1530,7 +1630,7 @@ public class MainLab extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }
-    
+
     public static boolean validarContrasena(String contrasena) {
 
         String regex = "^[a-zA-Z0-9-_&$%@]*$";
@@ -1584,28 +1684,32 @@ public class MainLab extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_CrearCon;
     private javax.swing.JButton btn_CrearCuenta;
     private javax.swing.JButton btn_CrearCuentaCC;
     private javax.swing.JButton btn_GuardarMod;
-    private javax.swing.JButton btn_GuardarMod1;
     private javax.swing.JButton btn_IS;
     private javax.swing.JButton btn_ISAdmin;
     private javax.swing.JButton btn_MainMod;
     private javax.swing.JButton btn_RegresarCC;
+    private javax.swing.JButton btn_RegresarCC1;
     private javax.swing.JButton btn_Regresarmod;
     private javax.swing.JButton btn_Regresarmod1;
     private javax.swing.JButton btn_Regresarmod2;
-    private javax.swing.JButton btn_Regresarmod3;
     private javax.swing.JButton btn_Regresarmod4;
     private javax.swing.JButton btn_Regresarmod5;
+    private javax.swing.JComboBox<String> cb_localCon;
+    private javax.swing.JComboBox<String> cb_marcaCarro;
     private javax.swing.JComboBox<String> cb_modJugadores;
-    private javax.swing.JComboBox<String> cb_modJugadores1;
+    private javax.swing.JComboBox<String> cb_modeloCarro;
+    private javax.swing.JComboBox<String> cb_paisCarro;
     private com.toedter.calendar.JDateChooser jDC_FechaNaCC;
+    private com.toedter.calendar.JDateChooser jDC_FechaNaCC1;
     private com.toedter.calendar.JDateChooser jDC_modFecha;
-    private com.toedter.calendar.JDateChooser jDC_modFecha1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1617,21 +1721,18 @@ public class MainLab extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator14;
-    private javax.swing.JSeparator jSeparator15;
-    private javax.swing.JSeparator jSeparator16;
-    private javax.swing.JSeparator jSeparator17;
-    private javax.swing.JSeparator jSeparator18;
-    private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator20;
-    private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator22;
+    private javax.swing.JSeparator jSeparator23;
+    private javax.swing.JSeparator jSeparator24;
+    private javax.swing.JSeparator jSeparator25;
+    private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
@@ -1648,9 +1749,7 @@ public class MainLab extends javax.swing.JFrame {
     private javax.swing.JLabel title3;
     private javax.swing.JLabel title4;
     private javax.swing.JLabel title5;
-    private javax.swing.JLabel title6;
     private javax.swing.JTextArea txtA_ListJugadores;
-    private javax.swing.JTextArea txtA_ListJugadores1;
     private javax.swing.JTextField txtf_ContraCC;
     private javax.swing.JTextField txtf_ContraIS;
     private javax.swing.JTextField txtf_CorreoCC;
@@ -1659,17 +1758,12 @@ public class MainLab extends javax.swing.JFrame {
     private javax.swing.JTextField txtf_UsuarioCC;
     private javax.swing.JTextField txtf_UsuarioIS;
     private javax.swing.JTextField txtf_modContra;
-    private javax.swing.JTextField txtf_modContra1;
     private javax.swing.JTextField txtf_modCorreo;
-    private javax.swing.JTextField txtf_modCorreo1;
     private javax.swing.JTextField txtf_modCuenta;
-    private javax.swing.JTextField txtf_modCuenta1;
     private javax.swing.JTextField txtf_modNombre;
-    private javax.swing.JTextField txtf_modNombre1;
     private javax.swing.JTextField txtf_modPais;
-    private javax.swing.JTextField txtf_modPais1;
     private javax.swing.JTextField txtf_modUsuario;
-    private javax.swing.JTextField txtf_modUsuario1;
+    private javax.swing.JTextField txtf_nombreCon;
     private javax.swing.JLabel userLabel10;
     private javax.swing.JLabel userLabel11;
     private javax.swing.JLabel userLabel12;
@@ -1683,17 +1777,13 @@ public class MainLab extends javax.swing.JFrame {
     private javax.swing.JLabel userLabel20;
     private javax.swing.JLabel userLabel21;
     private javax.swing.JLabel userLabel22;
-    private javax.swing.JLabel userLabel23;
-    private javax.swing.JLabel userLabel24;
-    private javax.swing.JLabel userLabel25;
-    private javax.swing.JLabel userLabel26;
-    private javax.swing.JLabel userLabel27;
-    private javax.swing.JLabel userLabel28;
-    private javax.swing.JLabel userLabel29;
     private javax.swing.JLabel userLabel3;
-    private javax.swing.JLabel userLabel30;
-    private javax.swing.JLabel userLabel31;
-    private javax.swing.JLabel userLabel32;
+    private javax.swing.JLabel userLabel33;
+    private javax.swing.JLabel userLabel34;
+    private javax.swing.JLabel userLabel35;
+    private javax.swing.JLabel userLabel36;
+    private javax.swing.JLabel userLabel37;
+    private javax.swing.JLabel userLabel38;
     private javax.swing.JLabel userLabel4;
     private javax.swing.JLabel userLabel5;
     private javax.swing.JLabel userLabel6;

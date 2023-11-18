@@ -20,7 +20,7 @@ public class Carro {
     String paisR;
     Color color;
     double precio;
-    ArrayList <String> mejoras = new ArrayList();
+    ArrayList <Partes> mejoras = new ArrayList();
     boolean marcador;
 
     public Carro(Date fechaFabric, String marca, String modelo, String paisR, Color color, double precio, boolean marcador) {
@@ -81,11 +81,11 @@ public class Carro {
         this.precio = precio;
     }
 
-    public ArrayList<String> getMejoras() {
+    public ArrayList<Partes> getMejoras() {
         return mejoras;
     }
 
-    public void setMejoras(ArrayList<String> mejoras) {
+    public void setMejoras(ArrayList<Partes> mejoras) {
         this.mejoras = mejoras;
     }
 
@@ -96,14 +96,19 @@ public class Carro {
     public void setMarcador(boolean marcador) {
         this.marcador = marcador;
     }
+    
+    public String validMarcador(boolean marc) { //es reconstruido o comprado
+        if (marc == true) {
+            return "Es reconstruido.";
+        } else {
+            return "Es comprado.";
+        }
+    }
 
     @Override
     public String toString() {
         String cad = "";
-        cad += "Carro{" + "fechaFabric=" + fechaFabric + ", marca=" + marca + ", modelo=" + modelo + ", paisR=" + paisR + ", color=" + color + ", precio=" + precio + ", mejoras=" + mejoras + ", marcador=" + marcador + '}';
-        for (String m : mejoras) {
-            cad+=m.toString()+"\n";
-        }
+        cad += "Carros:\n" + "Marca: " + marca + "\nModelo: " + modelo + "\nColor: " + color + "\nPrecio: " + precio + "\nMarcador: " + validMarcador(marcador);
         
         return cad;
     }
