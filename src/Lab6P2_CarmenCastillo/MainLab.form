@@ -1113,7 +1113,7 @@
                           <Component id="userLabel34" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="cb_localCon" min="-2" pref="38" max="-2" attributes="0"/>
-                          <EmptySpace pref="108" max="32767" attributes="0"/>
+                          <EmptySpace pref="110" max="32767" attributes="0"/>
                           <Component id="btn_CrearCon" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       </Group>
@@ -1257,17 +1257,12 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="btn_Regresarmod4" min="-2" pref="44" max="-2" attributes="0"/>
-                                  <EmptySpace pref="594" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="title5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="userLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                          <Component id="jSeparator24" alignment="1" min="-2" pref="333" max="-2" attributes="0"/>
-                                          <Component id="jDC_FechaNaCC1" alignment="0" min="-2" pref="333" max="-2" attributes="0"/>
-                                      </Group>
                                       <Component id="userLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="jSeparator25" alignment="0" max="32767" attributes="0"/>
@@ -1276,20 +1271,39 @@
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="userLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jSeparator26" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cb_modeloCarro" alignment="0" min="-2" pref="335" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="userLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                  <Component id="jSeparator24" alignment="1" min="-2" pref="333" max="-2" attributes="0"/>
+                                                  <Component id="jDC_FechaNaCC1" alignment="0" min="-2" pref="333" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="userLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jSeparator23" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cb_paisCarro" alignment="0" min="-2" pref="335" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="userLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="jSeparator26" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="cb_modeloCarro" alignment="0" min="-2" pref="335" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="userLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="jSeparator23" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="cb_paisCarro" alignment="0" min="-2" pref="335" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jSeparator15" alignment="0" min="-2" pref="398" max="-2" attributes="0"/>
+                                      <Component id="userLabel39" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1303,12 +1317,22 @@
                               <Component id="title5" alignment="3" max="32767" attributes="0"/>
                               <Component id="btn_Regresarmod4" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="userLabel35" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jDC_FechaNaCC1" min="-2" pref="32" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jSeparator24" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="userLabel35" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jDC_FechaNaCC1" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jSeparator24" min="-2" pref="26" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="userLabel39" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="jSeparator15" pref="29" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="userLabel36" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -1488,6 +1512,19 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator26">
                 </Component>
+                <Component class="javax.swing.JSeparator" name="jSeparator15">
+                </Component>
+                <Component class="javax.swing.JLabel" name="userLabel39">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Roboto Light" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="33" red="33" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="FECHA DE FABRICACION"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel4">
@@ -1531,7 +1568,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="49" max="32767" attributes="0"/>
+                          <EmptySpace pref="51" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
