@@ -111,7 +111,7 @@ public class Jugadores {
     @Override
     public String toString() {
         String cad = "";
-        cad += "Jugadores{" + "nombre=" + nombre + ", correo=" + correo + ", paisR=" + paisR + ", user=" + user + ", contra=" + contra + ", listaCarros=" + listaCarros + ", cuantBanco=" + cuantBanco + ", fecha_nacimiento=" + fecha_nacimiento + '}';
+        cad += "User: " + user;
         for (Carro l : listaCarros) {
             cad += l.toString() + "\n";
         }

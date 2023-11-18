@@ -7,10 +7,14 @@ package Lab6P2_CarmenCastillo;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,6 +30,7 @@ public class MainLab extends javax.swing.JFrame {
      */
     public MainLab() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -62,7 +67,15 @@ public class MainLab extends javax.swing.JFrame {
         vModificarJugador = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
+        title2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtA_ListJugadores = new javax.swing.JTextArea();
+        btn_Regresarmod1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        btn_Regresarmod2 = new javax.swing.JButton();
+        title3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tb_lista = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         title1 = new javax.swing.JLabel();
         userLabel12 = new javax.swing.JLabel();
@@ -89,6 +102,50 @@ public class MainLab extends javax.swing.JFrame {
         jSeparator13 = new javax.swing.JSeparator();
         btn_Regresarmod = new javax.swing.JButton();
         btn_GuardarMod = new javax.swing.JButton();
+        userLabel21 = new javax.swing.JLabel();
+        txtf_modCuenta = new javax.swing.JTextField();
+        jSeparator14 = new javax.swing.JSeparator();
+        vAdministrador = new javax.swing.JDialog();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel7 = new javax.swing.JPanel();
+        title4 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtA_ListJugadores1 = new javax.swing.JTextArea();
+        btn_Regresarmod3 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        btn_Regresarmod4 = new javax.swing.JButton();
+        title5 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tb_lista1 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        title6 = new javax.swing.JLabel();
+        userLabel23 = new javax.swing.JLabel();
+        userLabel24 = new javax.swing.JLabel();
+        cb_modJugadores1 = new javax.swing.JComboBox<>();
+        jSeparator15 = new javax.swing.JSeparator();
+        userLabel25 = new javax.swing.JLabel();
+        userLabel26 = new javax.swing.JLabel();
+        txtf_modNombre1 = new javax.swing.JTextField();
+        userLabel27 = new javax.swing.JLabel();
+        txtf_modCorreo1 = new javax.swing.JTextField();
+        jSeparator16 = new javax.swing.JSeparator();
+        jSeparator17 = new javax.swing.JSeparator();
+        userLabel28 = new javax.swing.JLabel();
+        txtf_modPais1 = new javax.swing.JTextField();
+        jSeparator18 = new javax.swing.JSeparator();
+        userLabel29 = new javax.swing.JLabel();
+        jDC_modFecha1 = new com.toedter.calendar.JDateChooser();
+        userLabel30 = new javax.swing.JLabel();
+        txtf_modUsuario1 = new javax.swing.JTextField();
+        jSeparator19 = new javax.swing.JSeparator();
+        userLabel31 = new javax.swing.JLabel();
+        txtf_modContra1 = new javax.swing.JTextField();
+        jSeparator20 = new javax.swing.JSeparator();
+        btn_Regresarmod5 = new javax.swing.JButton();
+        btn_GuardarMod1 = new javax.swing.JButton();
+        userLabel32 = new javax.swing.JLabel();
+        txtf_modCuenta1 = new javax.swing.JTextField();
+        jSeparator21 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         userLabel3 = new javax.swing.JLabel();
@@ -100,6 +157,10 @@ public class MainLab extends javax.swing.JFrame {
         btn_IS = new javax.swing.JButton();
         userLabel5 = new javax.swing.JLabel();
         btn_CrearCuenta = new javax.swing.JButton();
+        btn_MainMod = new javax.swing.JButton();
+        userLabel22 = new javax.swing.JLabel();
+        btn_ISAdmin = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -116,17 +177,13 @@ public class MainLab extends javax.swing.JFrame {
         txtf_ContraCC.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtf_ContraCC.setForeground(new java.awt.Color(102, 102, 102));
         txtf_ContraCC.setBorder(null);
-        txtf_ContraCC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtf_ContraCCActionPerformed(evt);
-            }
-        });
 
         userLabel7.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         userLabel7.setForeground(new java.awt.Color(51, 51, 51));
         userLabel7.setText("CONTRASEÑA");
 
         btn_CrearCuentaCC.setBackground(new java.awt.Color(0, 0, 0));
+        btn_CrearCuentaCC.setForeground(new java.awt.Color(255, 255, 255));
         btn_CrearCuentaCC.setText("CREAR CUENTA");
         btn_CrearCuentaCC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -142,11 +199,6 @@ public class MainLab extends javax.swing.JFrame {
         txtf_NombreCC.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtf_NombreCC.setForeground(new java.awt.Color(102, 102, 102));
         txtf_NombreCC.setBorder(null);
-        txtf_NombreCC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtf_NombreCCActionPerformed(evt);
-            }
-        });
 
         userLabel9.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         userLabel9.setForeground(new java.awt.Color(51, 51, 51));
@@ -174,13 +226,9 @@ public class MainLab extends javax.swing.JFrame {
         txtf_UsuarioCC.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtf_UsuarioCC.setForeground(new java.awt.Color(102, 102, 102));
         txtf_UsuarioCC.setBorder(null);
-        txtf_UsuarioCC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtf_UsuarioCCActionPerformed(evt);
-            }
-        });
 
         btn_RegresarCC.setBackground(new java.awt.Color(0, 0, 0));
+        btn_RegresarCC.setForeground(new java.awt.Color(255, 255, 255));
         btn_RegresarCC.setText("<");
         btn_RegresarCC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -304,32 +352,112 @@ public class MainLab extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
+
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+
+        title2.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title2.setForeground(new java.awt.Color(0, 0, 0));
+        title2.setText("LISTAR USUARIOS");
+
+        txtA_ListJugadores.setColumns(20);
+        txtA_ListJugadores.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtA_ListJugadores.setRows(5);
+        jScrollPane1.setViewportView(txtA_ListJugadores);
+
+        btn_Regresarmod1.setBackground(new java.awt.Color(0, 0, 0));
+        btn_Regresarmod1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Regresarmod1.setText("<");
+        btn_Regresarmod1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Regresarmod1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 919, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(btn_Regresarmod1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(title2)
+                        .addGap(23, 23, 23))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(58, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(title2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Regresarmod1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
 
         jTabbedPane1.addTab("Listar Jugadores", jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
 
+        btn_Regresarmod2.setBackground(new java.awt.Color(0, 0, 0));
+        btn_Regresarmod2.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Regresarmod2.setText("<");
+        btn_Regresarmod2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Regresarmod2MouseClicked(evt);
+            }
+        });
+
+        title3.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title3.setForeground(new java.awt.Color(0, 0, 0));
+        title3.setText("ELIMINAR USUARIOS");
+
+        tb_lista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Nombre", "Correo", "Cuenta de Banco"
+            }
+        ));
+        jScrollPane2.setViewportView(tb_lista);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 919, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(btn_Regresarmod2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(title3)
+                .addGap(37, 37, 37))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(91, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(title3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Regresarmod2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
         );
 
         jTabbedPane1.addTab("Eliminar Jugadores", jPanel6);
@@ -356,11 +484,6 @@ public class MainLab extends javax.swing.JFrame {
                 cb_modJugadoresItemStateChanged(evt);
             }
         });
-        cb_modJugadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_modJugadoresActionPerformed(evt);
-            }
-        });
 
         jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -376,11 +499,6 @@ public class MainLab extends javax.swing.JFrame {
         txtf_modNombre.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtf_modNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtf_modNombre.setBorder(null);
-        txtf_modNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtf_modNombreActionPerformed(evt);
-            }
-        });
 
         userLabel16.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         userLabel16.setForeground(new java.awt.Color(51, 51, 51));
@@ -412,11 +530,6 @@ public class MainLab extends javax.swing.JFrame {
         txtf_modUsuario.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtf_modUsuario.setForeground(new java.awt.Color(102, 102, 102));
         txtf_modUsuario.setBorder(null);
-        txtf_modUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtf_modUsuarioActionPerformed(evt);
-            }
-        });
 
         userLabel20.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         userLabel20.setForeground(new java.awt.Color(51, 51, 51));
@@ -426,13 +539,9 @@ public class MainLab extends javax.swing.JFrame {
         txtf_modContra.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtf_modContra.setForeground(new java.awt.Color(102, 102, 102));
         txtf_modContra.setBorder(null);
-        txtf_modContra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtf_modContraActionPerformed(evt);
-            }
-        });
 
         btn_Regresarmod.setBackground(new java.awt.Color(0, 0, 0));
+        btn_Regresarmod.setForeground(new java.awt.Color(255, 255, 255));
         btn_Regresarmod.setText("<");
         btn_Regresarmod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -441,12 +550,22 @@ public class MainLab extends javax.swing.JFrame {
         });
 
         btn_GuardarMod.setBackground(new java.awt.Color(0, 0, 0));
+        btn_GuardarMod.setForeground(new java.awt.Color(255, 255, 255));
         btn_GuardarMod.setText("GUARDAR CAMBIOS");
         btn_GuardarMod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_GuardarModMouseClicked(evt);
             }
         });
+
+        userLabel21.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel21.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel21.setText("CUENTA BANCARIA");
+
+        txtf_modCuenta.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_modCuenta.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_modCuenta.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_modCuenta.setBorder(null);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -455,22 +574,25 @@ public class MainLab extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                    .addComponent(jSeparator8)
-                    .addComponent(txtf_modNombre)
-                    .addComponent(txtf_modCorreo)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(userLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(userLabel13)
-                                .addComponent(title1)
-                                .addComponent(cb_modJugadores, 0, 303, Short.MAX_VALUE)
-                                .addComponent(jSeparator9))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(userLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userLabel13)
+                            .addComponent(title1)
+                            .addComponent(cb_modJugadores, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator9)
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
+                            .addComponent(jSeparator8)
+                            .addComponent(txtf_modNombre)
+                            .addComponent(txtf_modCorreo)
                             .addComponent(userLabel16)
                             .addComponent(userLabel15)
                             .addComponent(userLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jSeparator14, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtf_modCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(userLabel21)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
@@ -499,64 +621,70 @@ public class MainLab extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(title1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(userLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(userLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cb_modJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(67, 67, 67))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(46, 46, 46)
-                                        .addComponent(userLabel17))
-                                    .addComponent(btn_Regresarmod, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addGap(46, 46, 46)
+                                                .addComponent(userLabel17))
+                                            .addComponent(btn_Regresarmod, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtf_modPais, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(userLabel18)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jDC_modFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(title1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(userLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(userLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cb_modJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(userLabel14)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(userLabel15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtf_modNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(userLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtf_modCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(userLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtf_modPais, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtf_modUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(userLabel18)
-                                .addGap(18, 18, 18)
-                                .addComponent(jDC_modFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(userLabel14)
-                        .addGap(18, 18, 18)
-                        .addComponent(userLabel15)
+                                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtf_modNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(userLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtf_modUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(userLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtf_modCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(userLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtf_modContra, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_GuardarMod, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(userLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtf_modCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
+                .addComponent(btn_GuardarMod, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
 
@@ -571,6 +699,354 @@ public class MainLab extends javax.swing.JFrame {
         vModificarJugadorLayout.setVerticalGroup(
             vModificarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1)
+        );
+
+        jTabbedPane2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane2MouseClicked(evt);
+            }
+        });
+
+        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
+
+        title4.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title4.setForeground(new java.awt.Color(0, 0, 0));
+        title4.setText("LISTAR USUARIOS");
+
+        txtA_ListJugadores1.setColumns(20);
+        txtA_ListJugadores1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtA_ListJugadores1.setRows(5);
+        jScrollPane3.setViewportView(txtA_ListJugadores1);
+
+        btn_Regresarmod3.setBackground(new java.awt.Color(0, 0, 0));
+        btn_Regresarmod3.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Regresarmod3.setText("<");
+        btn_Regresarmod3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Regresarmod3MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(btn_Regresarmod3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(title4)
+                        .addGap(23, 23, 23))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(58, Short.MAX_VALUE))))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(title4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Regresarmod3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+
+        jTabbedPane2.addTab("Listar Jugadores", jPanel7);
+
+        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
+
+        btn_Regresarmod4.setBackground(new java.awt.Color(0, 0, 0));
+        btn_Regresarmod4.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Regresarmod4.setText("<");
+        btn_Regresarmod4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Regresarmod4MouseClicked(evt);
+            }
+        });
+
+        title5.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title5.setForeground(new java.awt.Color(0, 0, 0));
+        title5.setText("ELIMINAR USUARIOS");
+
+        tb_lista1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Nombre", "Correo", "Cuenta de Banco"
+            }
+        ));
+        jScrollPane4.setViewportView(tb_lista1);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(btn_Regresarmod4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(title5)
+                .addGap(37, 37, 37))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(91, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(title5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Regresarmod4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
+        );
+
+        jTabbedPane2.addTab("Eliminar Jugadores", jPanel8);
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+
+        title6.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title6.setForeground(new java.awt.Color(0, 0, 0));
+        title6.setText("MODIFICAR JUGADOR");
+
+        userLabel23.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        userLabel23.setForeground(new java.awt.Color(102, 102, 102));
+        userLabel23.setText("Seleccione el jugador a modificar. ");
+
+        userLabel24.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        userLabel24.setText("JUGADOR");
+
+        cb_modJugadores1.setBackground(new java.awt.Color(153, 153, 153));
+        cb_modJugadores1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cb_modJugadores1.setBorder(null);
+        cb_modJugadores1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_modJugadores1ItemStateChanged(evt);
+            }
+        });
+
+        jSeparator15.setForeground(new java.awt.Color(0, 0, 0));
+
+        userLabel25.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        userLabel25.setForeground(new java.awt.Color(102, 102, 102));
+        userLabel25.setText("Ingrese las modificaciones de su jugador.");
+
+        userLabel26.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel26.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel26.setText("NOMBRE");
+
+        txtf_modNombre1.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_modNombre1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_modNombre1.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_modNombre1.setBorder(null);
+
+        userLabel27.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel27.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel27.setText("CORREO");
+
+        txtf_modCorreo1.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_modCorreo1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_modCorreo1.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_modCorreo1.setBorder(null);
+
+        userLabel28.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel28.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel28.setText("PAIS DE RESIDENCIA");
+
+        txtf_modPais1.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_modPais1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_modPais1.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_modPais1.setBorder(null);
+
+        userLabel29.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel29.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel29.setText("FECHA DE NACIMIENTO");
+
+        userLabel30.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel30.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel30.setText("USUARIO");
+
+        txtf_modUsuario1.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_modUsuario1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_modUsuario1.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_modUsuario1.setBorder(null);
+
+        userLabel31.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel31.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel31.setText("CONTRASEÑA");
+
+        txtf_modContra1.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_modContra1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_modContra1.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_modContra1.setBorder(null);
+
+        btn_Regresarmod5.setBackground(new java.awt.Color(0, 0, 0));
+        btn_Regresarmod5.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Regresarmod5.setText("<");
+        btn_Regresarmod5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_Regresarmod5MouseClicked(evt);
+            }
+        });
+
+        btn_GuardarMod1.setBackground(new java.awt.Color(0, 0, 0));
+        btn_GuardarMod1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_GuardarMod1.setText("GUARDAR CAMBIOS");
+        btn_GuardarMod1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_GuardarMod1MouseClicked(evt);
+            }
+        });
+
+        userLabel32.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel32.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel32.setText("CUENTA BANCARIA");
+
+        txtf_modCuenta1.setBackground(new java.awt.Color(204, 204, 204));
+        txtf_modCuenta1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtf_modCuenta1.setForeground(new java.awt.Color(102, 102, 102));
+        txtf_modCuenta1.setBorder(null);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(userLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(userLabel24)
+                        .addComponent(title6)
+                        .addComponent(cb_modJugadores1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator15)
+                        .addComponent(jSeparator17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
+                        .addComponent(jSeparator16)
+                        .addComponent(txtf_modNombre1)
+                        .addComponent(txtf_modCorreo1)
+                        .addComponent(userLabel27)
+                        .addComponent(userLabel26)
+                        .addComponent(userLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jSeparator21, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtf_modCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(userLabel32)))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(btn_Regresarmod5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(userLabel29)
+                                .addComponent(jDC_modFecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(userLabel28)
+                                .addComponent(txtf_modPais1)
+                                .addComponent(jSeparator18, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                .addComponent(jSeparator19)
+                                .addComponent(txtf_modUsuario1)
+                                .addComponent(userLabel30)
+                                .addComponent(userLabel31)
+                                .addComponent(txtf_modContra1)
+                                .addComponent(jSeparator20))
+                            .addComponent(btn_GuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addGap(46, 46, 46)
+                                                .addComponent(userLabel28))
+                                            .addComponent(btn_Regresarmod5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtf_modPais1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(userLabel29)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jDC_modFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(title6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(userLabel23)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(userLabel24)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cb_modJugadores1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(userLabel25)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(userLabel26)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtf_modNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(userLabel27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtf_modCorreo1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(userLabel30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtf_modUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(userLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtf_modContra1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(userLabel32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtf_modCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
+                .addComponent(btn_GuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+        );
+
+        jTabbedPane2.addTab("Modificar Jugador", jPanel4);
+
+        javax.swing.GroupLayout vAdministradorLayout = new javax.swing.GroupLayout(vAdministrador.getContentPane());
+        vAdministrador.getContentPane().setLayout(vAdministradorLayout);
+        vAdministradorLayout.setHorizontalGroup(
+            vAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane2)
+        );
+        vAdministradorLayout.setVerticalGroup(
+            vAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane2)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -589,11 +1065,6 @@ public class MainLab extends javax.swing.JFrame {
         txtf_UsuarioIS.setBackground(new java.awt.Color(204, 204, 204));
         txtf_UsuarioIS.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtf_UsuarioIS.setBorder(null);
-        txtf_UsuarioIS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtf_UsuarioISActionPerformed(evt);
-            }
-        });
 
         userLabel4.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         userLabel4.setForeground(new java.awt.Color(51, 51, 51));
@@ -604,6 +1075,7 @@ public class MainLab extends javax.swing.JFrame {
         txtf_ContraIS.setBorder(null);
 
         btn_IS.setBackground(new java.awt.Color(0, 0, 0));
+        btn_IS.setForeground(new java.awt.Color(255, 255, 255));
         btn_IS.setText("INGRESAR");
         btn_IS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -613,15 +1085,41 @@ public class MainLab extends javax.swing.JFrame {
 
         userLabel5.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         userLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        userLabel5.setText("O");
+        userLabel5.setText("/");
 
         btn_CrearCuenta.setBackground(new java.awt.Color(0, 0, 0));
+        btn_CrearCuenta.setForeground(new java.awt.Color(255, 255, 255));
         btn_CrearCuenta.setText("CREAR CUENTA");
         btn_CrearCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_CrearCuentaMouseClicked(evt);
             }
         });
+
+        btn_MainMod.setBackground(new java.awt.Color(0, 0, 0));
+        btn_MainMod.setForeground(new java.awt.Color(255, 255, 255));
+        btn_MainMod.setText("MODIFICAR CUENTAS");
+        btn_MainMod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_MainModMouseClicked(evt);
+            }
+        });
+
+        userLabel22.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        userLabel22.setForeground(new java.awt.Color(51, 51, 51));
+        userLabel22.setText("/");
+
+        btn_ISAdmin.setBackground(new java.awt.Color(0, 0, 0));
+        btn_ISAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ISAdmin.setText("INGRESAR COMO ADMINISTRADOR");
+        btn_ISAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_ISAdminMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("O");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -642,13 +1140,21 @@ public class MainLab extends javax.swing.JFrame {
                                 .addComponent(txtf_UsuarioIS)
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(449, 449, 449)
-                        .addComponent(userLabel5))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(391, 391, 391)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_IS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_CrearCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))))
+                        .addGap(290, 290, 290)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_CrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_IS, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(29, 29, 29)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(userLabel5)
+                                    .addComponent(userLabel22))))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_MainMod)
+                            .addComponent(btn_ISAdmin))))
                 .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -669,11 +1175,17 @@ public class MainLab extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_IS, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_IS, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userLabel22)
+                    .addComponent(btn_ISAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(userLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(btn_CrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_CrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userLabel5)
+                    .addComponent(btn_MainMod, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
         );
 
@@ -691,15 +1203,12 @@ public class MainLab extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtf_UsuarioISActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_UsuarioISActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtf_UsuarioISActionPerformed
-
     private void btn_CrearCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearCuentaMouseClicked
 
         vCrearCuenta.pack();
         vCrearCuenta.setLocationRelativeTo(null);
         vCrearCuenta.setVisible(true);
+        this.setVisible(false);
 
     }//GEN-LAST:event_btn_CrearCuentaMouseClicked
 
@@ -726,17 +1235,7 @@ public class MainLab extends javax.swing.JFrame {
     private void btn_RegresarCCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegresarCCMouseClicked
         vCrearCuenta.setVisible(false);
         this.setVisible(true);
-
-
     }//GEN-LAST:event_btn_RegresarCCMouseClicked
-
-    private void txtf_UsuarioCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_UsuarioCCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtf_UsuarioCCActionPerformed
-
-    private void txtf_NombreCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_NombreCCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtf_NombreCCActionPerformed
 
     private void btn_CrearCuentaCCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearCuentaCCMouseClicked
 
@@ -754,6 +1253,7 @@ public class MainLab extends javax.swing.JFrame {
         corre = txtf_CorreoCC.getText();
         fechaN = jDC_FechaNaCC.getDate();
         
+        int anio = fechaN.getYear() + 1900;
 
         for (int i = 0; i < jugadores.size(); i++) {
 
@@ -764,8 +1264,112 @@ public class MainLab extends javax.swing.JFrame {
 
         }
         //validar edad
-        DateFormat DFormat = new SimpleDateFormat("dd/MM/yyyy");
-        DFormat.format(fechaN);
+//        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Paris"));
+//        cal.setTime(fechaN);
+        System.out.println(anio);
+        if (anio > 2011) {
+            edadValid = false;
+            JOptionPane.showMessageDialog(null, "Edad invalida 1.");
+        } else if (anio == 2011){
+            if (fechaN.getMonth() > 11) { //fecha de hoy 17 Nov
+                edadValid = false;
+                JOptionPane.showMessageDialog(null, "Edad invalida 2.");
+            } else if (fechaN.getMonth() == 11) {
+                if (fechaN.getDate() > 17) {
+                    edadValid = false;
+                    JOptionPane.showMessageDialog(null, "Edad invalida 3.");
+
+                } else if (fechaN.getDate() < 17) {
+                    
+                }
+            } else if (fechaN.getMonth() < 11) {
+                
+                
+            }
+        } else if (anio < 2011) {
+            
+            
+        }
+
+        //validar contra
+        if (validarContrasena(contrase) == false) {
+            contraValid = false;
+            JOptionPane.showMessageDialog(null, "Contraseña invalida.");
+        }
+
+        if (!usuarioRep && edadValid && contraValid) {
+            if (txtf_UsuarioCC.getText().equals("") || txtf_ContraCC.getText().equals("") || txtf_NombreCC.getText().equals("") || txtf_CorreoCC.getText().equals("") || txtf_PaisRCC.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "¡Información incompleta!\nFaltan datos para crear usuario");
+            } else {
+                jugadores.add(new Jugadores(nombr, corre, pais, usuario, contrase, 150000, fechaN));
+                JOptionPane.showMessageDialog(null, "¡Usuario creado exitosamente!");
+                txtf_UsuarioCC.setText("");
+                txtf_ContraCC.setText("");
+                txtf_NombreCC.setText("");
+                txtf_CorreoCC.setText("");
+                txtf_PaisRCC.setText("");
+                jDC_FechaNaCC.setDate(new Date());
+                vCrearCuenta.setVisible(false);
+                this.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_btn_CrearCuentaCCMouseClicked
+
+    private void cb_modJugadoresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_modJugadoresItemStateChanged
+        // TODO add your handling code here:
+//        if (evt.getStateChange() == 2) {
+//            Jugadores c = (Jugadores) cb_modJugadores.getSelectedItem();
+//            JDate_Mod.setDate(c.getFecha());
+//            btn_ColorMod.setBackground(c.getColor());
+//        }
+    }//GEN-LAST:event_cb_modJugadoresItemStateChanged
+
+    private void btn_RegresarmodMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegresarmodMouseClicked
+        vModificarJugador.pack();
+        vModificarJugador.setLocationRelativeTo(null);
+        vModificarJugador.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_btn_RegresarmodMouseClicked
+
+    private void btn_GuardarModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_GuardarModMouseClicked
+
+        boolean usuarioRep = false;
+        boolean edadValid = true;
+        boolean contraValid = true;
+        boolean cuentaValid = true;
+
+        String nombr, contrase, usuario, pais, corre;
+        Date fechaN;
+        double cuenta;
+
+        nombr = txtf_modNombre.getText();
+        contrase = txtf_modContra.getText();
+        usuario = txtf_modUsuario.getText();
+        pais = txtf_modPais.getText();
+        corre = txtf_modCorreo.getText();
+        fechaN = jDC_modFecha.getDate();
+        cuenta = Double.parseDouble(txtf_modCuenta.getText());
+
+        for (int i = 0; i < jugadores.size(); i++) {
+
+            if (txtf_modUsuario.getText().equals(jugadores.get(i).getUser())) {
+                JOptionPane.showMessageDialog(null, "¡Este usuario ya existe!");
+                usuarioRep = true;
+            }
+
+        }
+
+        for (int i = 0; i < jugadores.size(); i++) {
+
+            if (cuenta < jugadores.get(i).getCuantBanco()) {
+                JOptionPane.showMessageDialog(null, "¡Su nueva cuenta bancaria debe ser mayor!");
+                cuentaValid = false;
+            }
+
+        }
+        //validar edad
+//        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Paris"));
+//        cal.setTime(fechaN);
         System.out.println(fechaN.getYear());
         if (fechaN.getYear() > 2011) {
             edadValid = false;
@@ -788,64 +1392,145 @@ public class MainLab extends javax.swing.JFrame {
         //validar contra
         if (validarContrasena(contrase) == false) {
             contraValid = false;
-            JOptionPane.showMessageDialog(null, "Contraseña invalida");
+            JOptionPane.showMessageDialog(null, "Contraseña invalida.");
         }
 
-        if (!usuarioRep && edadValid && contraValid) {
-            if (txtf_UsuarioCC.getText().equals("") || txtf_ContraCC.getText().equals("") || txtf_NombreCC.getText().equals("") || txtf_CorreoCC.getText().equals("") || txtf_PaisRCC.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "¡Información incompleta!\nFaltan datos para crear usuario");
-            } else {
-                jugadores.add(new Jugadores(nombr, corre, pais, usuario, contrase, 150000, fechaN));
-                JOptionPane.showMessageDialog(null, "¡Usuario creado exitosamente!");
-                txtf_UsuarioCC.setText("");
-                txtf_ContraCC.setText("");
-                txtf_NombreCC.setText("");
-                txtf_CorreoCC.setText("");
-                txtf_PaisRCC.setText("");
-                jDC_FechaNaCC.setDate(new Date());
-                vCrearCuenta.setVisible(false);
-                this.setVisible(true);
-            }
+        if (!usuarioRep && edadValid && contraValid && cuentaValid) {
+            jugadores.get(cb_modJugadores.getSelectedIndex()).setFecha_nacimiento(fechaN);
+            jugadores.get(cb_modJugadores.getSelectedIndex()).setContra(contrase);
+            jugadores.get(cb_modJugadores.getSelectedIndex()).setCorreo(corre);
+            jugadores.get(cb_modJugadores.getSelectedIndex()).setCuantBanco(cuenta);
+            jugadores.get(cb_modJugadores.getSelectedIndex()).setNombre(nombr);
+            jugadores.get(cb_modJugadores.getSelectedIndex()).setPaisR(pais);
+            jugadores.get(cb_modJugadores.getSelectedIndex()).setUser(usuario);
+            JOptionPane.showMessageDialog(null, "Usuario modificado exitosamente.");
+            
+            txtf_modNombre.setText("");
+            txtf_modContra.setText("");
+            txtf_modCorreo.setText("");
+            txtf_modCuenta.setText("");
+            txtf_modPais.setText("");
+            txtf_modPais.setText("");
+            txtf_modUsuario.setText("");
+            jDC_modFecha.setDate(new Date());
         }
-    }//GEN-LAST:event_btn_CrearCuentaCCMouseClicked
 
-    private void txtf_ContraCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_ContraCCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtf_ContraCCActionPerformed
-
-    private void cb_modJugadoresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_modJugadoresItemStateChanged
-        // TODO add your handling code here:
-//        if (evt.getStateChange() == 2) {
-//            Jugadores c = (Jugadores) cb_modJugadores.getSelectedItem();
-//            JDate_Mod.setDate(c.getFecha());
-//            btn_ColorMod.setBackground(c.getColor());
-//        }
-    }//GEN-LAST:event_cb_modJugadoresItemStateChanged
-
-    private void cb_modJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_modJugadoresActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_modJugadoresActionPerformed
-
-    private void txtf_modNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_modNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtf_modNombreActionPerformed
-
-    private void txtf_modUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_modUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtf_modUsuarioActionPerformed
-
-    private void txtf_modContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtf_modContraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtf_modContraActionPerformed
-
-    private void btn_RegresarmodMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RegresarmodMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_RegresarmodMouseClicked
-
-    private void btn_GuardarModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_GuardarModMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_btn_GuardarModMouseClicked
 
+    private void btn_MainModMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MainModMouseClicked
+        vModificarJugador.pack();
+        vModificarJugador.setLocationRelativeTo(null);
+        vModificarJugador.setVisible(true);
+        llenarcomboModCarro();
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_MainModMouseClicked
+
+    private void ListarJug() {
+        txtA_ListJugadores.setText("");
+        String x = "";
+        for (Jugadores j : jugadores) {
+                x += "Usuario: " + j.getUser() + " | ";
+                x += "Nombre: " + j.getNombre()+ "\n";
+        }
+        txtA_ListJugadores.setText(x);
+
+    }
+    
+    private void btn_ISAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ISAdminMouseClicked
+        
+        if (txtf_UsuarioIS.getText().equals("lib123") && txtf_ContraIS.getText().equals("321lib")) {
+
+            this.setVisible(false);
+//            jdPantallaAdmin.pack();
+//            jdPantallaAdmin.setLocationRelativeTo(null);
+//            jdPantallaAdmin.setVisible(true);
+            //llenarcbTipoList();
+
+        } else {
+
+            JOptionPane.showMessageDialog(this, "Usuario y/o contraseña equivocados.");
+
+        }
+        
+    }//GEN-LAST:event_btn_ISAdminMouseClicked
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        ListarJug();
+        listarTabla();
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void btn_Regresarmod1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod1MouseClicked
+        vModificarJugador.pack();
+        vModificarJugador.setLocationRelativeTo(null);
+        vModificarJugador.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_btn_Regresarmod1MouseClicked
+
+    private void btn_Regresarmod2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod2MouseClicked
+        vModificarJugador.pack();
+        vModificarJugador.setLocationRelativeTo(null);
+        vModificarJugador.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_btn_Regresarmod2MouseClicked
+
+    private void btn_Regresarmod3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Regresarmod3MouseClicked
+
+    private void btn_Regresarmod4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Regresarmod4MouseClicked
+
+    private void cb_modJugadores1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_modJugadores1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_modJugadores1ItemStateChanged
+
+    private void btn_Regresarmod5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_Regresarmod5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Regresarmod5MouseClicked
+
+    private void btn_GuardarMod1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_GuardarMod1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_GuardarMod1MouseClicked
+
+    private void jTabbedPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTabbedPane2MouseClicked
+
+    private void llenarcomboModCarro() {
+        cb_modJugadores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
+        for (Jugadores c : jugadores) {
+            DefaultComboBoxModel modelo
+                    = (DefaultComboBoxModel) cb_modJugadores.getModel();
+            modelo.addElement(c);
+            cb_modJugadores.setModel(modelo);
+        }
+    }
+    
+    private void listarTabla() {
+        try {
+
+            //limpiar tabla
+            tb_lista.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Usuario", "Nombre", "Correo", "Cuenta de Banco"
+                    }
+            ));
+
+            // TODO add your handling code here:
+            for (Jugadores c : jugadores) {
+                Object[] row = {c.getUser(), c.getNombre(), c.getCorreo(), c.getCuantBanco()};
+                DefaultTableModel modelo = (DefaultTableModel) tb_lista.getModel();
+                modelo.addRow(row);
+                tb_lista.setModel(modelo);
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     public static boolean validarContrasena(String contrasena) {
 
         String regex = "^[a-zA-Z0-9-_&$%@]*$";
@@ -902,25 +1587,51 @@ public class MainLab extends javax.swing.JFrame {
     private javax.swing.JButton btn_CrearCuenta;
     private javax.swing.JButton btn_CrearCuentaCC;
     private javax.swing.JButton btn_GuardarMod;
+    private javax.swing.JButton btn_GuardarMod1;
     private javax.swing.JButton btn_IS;
+    private javax.swing.JButton btn_ISAdmin;
+    private javax.swing.JButton btn_MainMod;
     private javax.swing.JButton btn_RegresarCC;
     private javax.swing.JButton btn_Regresarmod;
+    private javax.swing.JButton btn_Regresarmod1;
+    private javax.swing.JButton btn_Regresarmod2;
+    private javax.swing.JButton btn_Regresarmod3;
+    private javax.swing.JButton btn_Regresarmod4;
+    private javax.swing.JButton btn_Regresarmod5;
     private javax.swing.JComboBox<String> cb_modJugadores;
+    private javax.swing.JComboBox<String> cb_modJugadores1;
     private com.toedter.calendar.JDateChooser jDC_FechaNaCC;
     private com.toedter.calendar.JDateChooser jDC_modFecha;
+    private com.toedter.calendar.JDateChooser jDC_modFecha1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator21;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
@@ -929,7 +1640,17 @@ public class MainLab extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable tb_lista;
+    private javax.swing.JTable tb_lista1;
     private javax.swing.JLabel title1;
+    private javax.swing.JLabel title2;
+    private javax.swing.JLabel title3;
+    private javax.swing.JLabel title4;
+    private javax.swing.JLabel title5;
+    private javax.swing.JLabel title6;
+    private javax.swing.JTextArea txtA_ListJugadores;
+    private javax.swing.JTextArea txtA_ListJugadores1;
     private javax.swing.JTextField txtf_ContraCC;
     private javax.swing.JTextField txtf_ContraIS;
     private javax.swing.JTextField txtf_CorreoCC;
@@ -938,10 +1659,17 @@ public class MainLab extends javax.swing.JFrame {
     private javax.swing.JTextField txtf_UsuarioCC;
     private javax.swing.JTextField txtf_UsuarioIS;
     private javax.swing.JTextField txtf_modContra;
+    private javax.swing.JTextField txtf_modContra1;
     private javax.swing.JTextField txtf_modCorreo;
+    private javax.swing.JTextField txtf_modCorreo1;
+    private javax.swing.JTextField txtf_modCuenta;
+    private javax.swing.JTextField txtf_modCuenta1;
     private javax.swing.JTextField txtf_modNombre;
+    private javax.swing.JTextField txtf_modNombre1;
     private javax.swing.JTextField txtf_modPais;
+    private javax.swing.JTextField txtf_modPais1;
     private javax.swing.JTextField txtf_modUsuario;
+    private javax.swing.JTextField txtf_modUsuario1;
     private javax.swing.JLabel userLabel10;
     private javax.swing.JLabel userLabel11;
     private javax.swing.JLabel userLabel12;
@@ -953,13 +1681,26 @@ public class MainLab extends javax.swing.JFrame {
     private javax.swing.JLabel userLabel18;
     private javax.swing.JLabel userLabel19;
     private javax.swing.JLabel userLabel20;
+    private javax.swing.JLabel userLabel21;
+    private javax.swing.JLabel userLabel22;
+    private javax.swing.JLabel userLabel23;
+    private javax.swing.JLabel userLabel24;
+    private javax.swing.JLabel userLabel25;
+    private javax.swing.JLabel userLabel26;
+    private javax.swing.JLabel userLabel27;
+    private javax.swing.JLabel userLabel28;
+    private javax.swing.JLabel userLabel29;
     private javax.swing.JLabel userLabel3;
+    private javax.swing.JLabel userLabel30;
+    private javax.swing.JLabel userLabel31;
+    private javax.swing.JLabel userLabel32;
     private javax.swing.JLabel userLabel4;
     private javax.swing.JLabel userLabel5;
     private javax.swing.JLabel userLabel6;
     private javax.swing.JLabel userLabel7;
     private javax.swing.JLabel userLabel8;
     private javax.swing.JLabel userLabel9;
+    private javax.swing.JDialog vAdministrador;
     private javax.swing.JDialog vCrearCuenta;
     private javax.swing.JDialog vModificarJugador;
     // End of variables declaration//GEN-END:variables
